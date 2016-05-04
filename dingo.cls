@@ -41,7 +41,7 @@
     \begin{titlepage}
         \label{page:cover}
         \newgeometry{left=0em,right=0em,top=0em,bottom=0em}
-            \vbox{\hfil\colorbox{\the\titlebgcolor}{\hbox to0.8\paperwidth{\color{\the\titlebgcolor}Dingo,Copyright (C) 2016 DingoLab}\hspace{0.1\paperwidth}}}
+            \vbox{\hfill\colorbox{\the\titlebgcolor}{\hbox to0.815\paperwidth{\Huge \color{\the\titlebgcolor}Dingo,Copyright (C) 2016 DingoLab}}}
             \vfill
             \begin{center}
                 \includegraphics[width=0.6\paperwidth]{\the\coverpic}

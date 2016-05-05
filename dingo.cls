@@ -33,9 +33,6 @@
 
 
 \RequirePackage{geometry}
-\ifx \newgeometry \undefined
-\let\newgeomtry=\geometry
-\fi
 
 \makeatletter
 \newcommand{\makecover}{%

@@ -123,7 +123,7 @@
 
 \RequirePackage{geometry}
 
-\renewcommand{\tableofcontents}
+\newcommand{\makecontent}
 {
 	\label{page:contents}
 	\pdfbookmark[1]{目录}{page:contents}

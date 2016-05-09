@@ -87,7 +87,7 @@
   }
 }
 {
-  \setcounter{codeline}{\value{lstnumber}}
+  \setcounter{codeline}{1}
 }
 %  SQL
 \lstnewenvironment{sql}[1][]
@@ -123,6 +123,16 @@
 
 \RequirePackage{geometry}
 
+\renewcommand{\tableofcontents}
+{
+	\label{page:contents}
+	\pdfbookmark[1]{目录}{page:contents}
+	\pagenumbering{roman}
+	\tableofcontents
+	\newpage
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+}
 \makeatletter
 \newcommand{\makecover}{%
     \pdfbookmark[0]{Dingo \@title}{}

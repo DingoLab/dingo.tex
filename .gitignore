@@ -161,3 +161,4 @@ pythontex-files-*/
 
 # Latexian
 TSWLatexianTemp*
+.DS_Store

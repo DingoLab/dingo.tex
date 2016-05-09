@@ -28,8 +28,103 @@
 \newdateformat{mdydate}{\monthname[\THEMONTH] \ordinaldate{\THEDAY} \THEYEAR}%
 \date{\mdydate\today}
 
+%%% 代码列表
+\RequirePackage{listings}
+\newcounter{codeline}
+\setcounter{codeline}{1}
+\setcounter{lstnumber}{1}
+%%% 定义颜色
+\makeatletter
+\definecolor{@codebg}{rgb}{1.00,0.90,1.00}
+\definecolor{@codekw}{rgb}{0.16,0.53,0.53}
+\definecolor{@codecm}{rgb}{0.00,0.00,0.00}
+\definecolor{@codens}{rgb}{0.00,0.00,0.00}
+\definecolor{@specbg}{rgb}{0.96,0.97,0.38}
+\definecolor{@speckw}{rgb}{0.16,0.53,0.53}
+\definecolor{@speccm}{rgb}{0.00,0.00,0.00}
+\definecolor{@spcens}{rgb}{0.00,0.00,0.00}
+\makeatother
+%%% 定义代码环境
+% code
+\makeatletter
+\def\@codestykw{\bfseries\color{\@codekw}}
+\def\@codestycm{\rmfamily\itshape\color{\@codecm}}
+\def\@codestyns{\tiny\color{\@codens}}
+\lstnewenvironment{code}[1][]
+{ \lstset
+  { firstnumber=last
+  , language=Haskell
+  , breaklines
+  , backgroundcolor=\color{\@codebg}
+  , basicstyle=\sffamily
+  , keywordstyle=\@codestykw
+  , commentstyle=\@codestycm
+  , flexiblecolumns
+  , numbers=left
+  , numberstyle=\@codestyns
+  , frame=trBL
+  , #1
+  }
+}
+{
+  \setcounter{codeline}{\value{lstnumber}}
+}
+\makeatother
+% spec
+\makeatletter
+\def\@specstykw{\bfseries\color{\@speckw}}
+\def\@specstycm{\rmfamily\itshape\color{\@speccm}}
+\def\@specstyns{\tiny\color{\@specns}}
+\lstnewenvironment{spec}[1][]
+{ \lstset
+  { firstnumber=last
+  , language=Haskell
+  , breaklines
+  , backgroundcolor=\color{\@specbg}
+  , basicstyle=\sffamily
+  , keywordstyle=\@specstykw
+  , commentstyle=\@specstycm
+  , flexiblecolumns
+  , numbers=left
+  , numberstyle=\@specstyns
+  , frame=trBL
+  , #1
+  }
+}
+{
+  \setcounter{codeline}{\value{lstnumber}}
+}
+\makeatother
+%  SQL
+\lstnewenvironment{sql}[1][]
+{ \lstset
+    { firstnumber=last
+    , language=SQL
+    , breaklines
+    , flexiblecolums
+    , number=left
+    , frame=trBL
+    , #1
+    }
+}
+{
+    \setcounter{lstnumber}{1}
+}
+
+%%% for LiterateHaskell
+\long\def\ignore#1{\relax}
+
+%%% 附录设置
+\RequirePackage[titletoc]{appendix}
+\renewcommand{\appendixname}{附录}
+\renewcommand{\appendixpagename}{目录}
+\appendixtitletocon
+
 %%% 图片环绕
 \RequirePackage{wrapfig}
+
+%%% Caption
+\RequirePackage{caption}
 
 
 \RequirePackage{geometry}
@@ -67,11 +162,11 @@
             \vspace{0.06\paperwidth}
         \restoregeometry
     \newpage
-    
+
     \pdfbookmark[1]{扉页}{page:title}
     % 扉页
     \label{page:title}
-    
+
     \let\footnotesize\small
     \let\footnoterule\relax
     \let \footnote \thanks
@@ -100,9 +195,9 @@
     \global\let\author\relax
     \global\let\date\relax
     \global\let\and\relax
-    
+
     %\maketitle
-    \thispagestyle{empty} 
+    \thispagestyle{empty}
     \vfill
     \begin{center}
         Version \the\version\\

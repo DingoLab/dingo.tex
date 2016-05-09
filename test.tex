@@ -10,4 +10,38 @@
 
 \begin{document}
     \makecover
+    这是Haskell 文学编程内容的测试。
+    \\
+    code 环境的测试
+    \begin{code}
+-- Haskell
+
+module Main where
+	main :: IO ()
+	main = do
+		putStrLn "This is Haskell version of Hello,World."
+		putStrLn "Hello, World!"
+    \end{code}
+	 spec 环境的测试
+	\begin{spec}
+module Foo where
+	data Bar = Bar
+    \end{spec}
+    测试 sql 环境
+    \begin{sql}
+CREATE TABLE branch
+	( branch_name VARCHAR(64) PRIMARY KEY
+	, branch_city VARCHAR(64) NOT NULL
+	, assets      BIGINT NOT NULL CHECK (assets >= 0)
+	)
+;
+    \end{sql}
+    
+    测试附录
+    \begin{appendix}
+    	\section{foo}
+    	bar
+    	\section{BAR}
+    	FOO
+     \end{appendix}
 \end{document}

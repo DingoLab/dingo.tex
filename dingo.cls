@@ -34,34 +34,31 @@
 \setcounter{codeline}{1}
 \setcounter{lstnumber}{1}
 %%% 定义颜色
-\makeatletter
-\definecolor{@codebg}{rgb}{1.00,0.90,1.00}
-\definecolor{@codekw}{rgb}{0.16,0.53,0.53}
-\definecolor{@codecm}{rgb}{0.00,0.00,0.00}
-\definecolor{@codens}{rgb}{0.00,0.00,0.00}
-\definecolor{@specbg}{rgb}{0.96,0.97,0.38}
-\definecolor{@speckw}{rgb}{0.16,0.53,0.53}
-\definecolor{@speccm}{rgb}{0.00,0.00,0.00}
-\definecolor{@spcens}{rgb}{0.00,0.00,0.00}
-\makeatother
+\definecolor{codebg}{rgb}{1.00,0.90,1.00}
+\definecolor{codekw}{rgb}{0.16,0.53,0.53}
+\definecolor{codecm}{rgb}{0.00,0.00,0.00}
+\definecolor{codens}{rgb}{0.00,0.00,0.00}
+\definecolor{specbg}{rgb}{0.96,0.97,0.38}
+\definecolor{speckw}{rgb}{0.16,0.53,0.53}
+\definecolor{speccm}{rgb}{0.00,0.00,0.00}
+\definecolor{specns}{rgb}{0.00,0.00,0.00}
 %%% 定义代码环境
 % code
-\makeatletter
-\def\@codestykw{\bfseries\color{\@codekw}}
-\def\@codestycm{\rmfamily\itshape\color{\@codecm}}
-\def\@codestyns{\tiny\color{\@codens}}
+\def\codestykw{\bfseries\color{\codekw}}
+\def\codestycm{\rmfamily\itshape\color{\codecm}}
+\def\codestyns{\tiny\color{\codens}}
 \lstnewenvironment{code}[1][]
 { \lstset
   { firstnumber=last
   , language=Haskell
   , breaklines
-  , backgroundcolor=\color{\@codebg}
+  , backgroundcolor=\color{\codebg}
   , basicstyle=\sffamily
-  , keywordstyle=\@codestykw
-  , commentstyle=\@codestycm
+  , keywordstyle=\codestykw
+  , commentstyle=\codestycm
   , flexiblecolumns
   , numbers=left
-  , numberstyle=\@codestyns
+  , numberstyle=\codestyns
   , frame=trBL
   , #1
   }
@@ -69,24 +66,22 @@
 {
   \setcounter{codeline}{\value{lstnumber}}
 }
-\makeatother
 % spec
-\makeatletter
-\def\@specstykw{\bfseries\color{\@speckw}}
-\def\@specstycm{\rmfamily\itshape\color{\@speccm}}
-\def\@specstyns{\tiny\color{\@specns}}
+\def\specstykw{\bfseries\color{\speckw}}
+\def\specstycm{\rmfamily\itshape\color{\speccm}}
+\def\specstyns{\tiny\color{\specns}}
 \lstnewenvironment{spec}[1][]
 { \lstset
   { firstnumber=last
   , language=Haskell
   , breaklines
-  , backgroundcolor=\color{\@specbg}
+  , backgroundcolor=\color{\specbg}
   , basicstyle=\sffamily
-  , keywordstyle=\@specstykw
-  , commentstyle=\@specstycm
+  , keywordstyle=\specstykw
+  , commentstyle=\specstycm
   , flexiblecolumns
   , numbers=left
-  , numberstyle=\@specstyns
+  , numberstyle=\specstyns
   , frame=trBL
   , #1
   }
@@ -94,7 +89,6 @@
 {
   \setcounter{codeline}{\value{lstnumber}}
 }
-\makeatother
 %  SQL
 \lstnewenvironment{sql}[1][]
 { \lstset

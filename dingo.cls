@@ -44,15 +44,15 @@
 \definecolor{specns}{rgb}{0.00,0.00,0.00}
 %%% 定义代码环境
 % code
-\def\codestykw{\bfseries\color{\codekw}}
-\def\codestycm{\rmfamily\itshape\color{\codecm}}
-\def\codestyns{\tiny\color{\codens}}
+\def\codestykw{\bfseries\color{codekw}}
+\def\codestycm{\rmfamily\itshape\color{codecm}}
+\def\codestyns{\tiny\color{codens}}
 \lstnewenvironment{code}[1][]
 { \lstset
   { firstnumber=last
   , language=Haskell
   , breaklines
-  , backgroundcolor=\color{\codebg}
+  , backgroundcolor=\color{codebg}
   , basicstyle=\sffamily
   , keywordstyle=\codestykw
   , commentstyle=\codestycm
@@ -67,15 +67,15 @@
   \setcounter{codeline}{\value{lstnumber}}
 }
 % spec
-\def\specstykw{\bfseries\color{\speckw}}
-\def\specstycm{\rmfamily\itshape\color{\speccm}}
-\def\specstyns{\tiny\color{\specns}}
+\def\specstykw{\bfseries\color{speckw}}
+\def\specstycm{\rmfamily\itshape\color{speccm}}
+\def\specstyns{\tiny\color{specns}}
 \lstnewenvironment{spec}[1][]
 { \lstset
   { firstnumber=last
   , language=Haskell
   , breaklines
-  , backgroundcolor=\color{\specbg}
+  , backgroundcolor=\color{specbg}
   , basicstyle=\sffamily
   , keywordstyle=\specstykw
   , commentstyle=\specstycm
@@ -95,8 +95,8 @@
     { firstnumber=last
     , language=SQL
     , breaklines
-    , flexiblecolums
-    , number=left
+    , flexiblecolumns
+    , numbers=left
     , frame=trBL
     , #1
     }

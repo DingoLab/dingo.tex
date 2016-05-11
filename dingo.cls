@@ -104,6 +104,22 @@
 {
     \setcounter{lstnumber}{1}
 }
+%  shell
+\lstnewenvironment{shell}[1][]
+{ \lstset
+	{ firstnumber=last
+		, language=bash
+		, breaklines
+		, flexiblecolumns
+		, numbers=left
+		, frame=trBL
+		, #1
+	}
+}
+{
+	\setcounter{lstnumber}{1}
+}
+
 
 %%% for LiterateHaskell
 \long\def\ignore#1{\relax}

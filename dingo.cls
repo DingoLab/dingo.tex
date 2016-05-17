@@ -133,7 +133,6 @@
 	\pagenumbering{arabic}
 	\setcounter{page}{1}
 }
-\makeatletter
 \newcommand{\makecover}{%
     \pdfbookmark[0]{Dingo \@title}{}
     \pdfbookmark[1]{封面}{page:cover}
@@ -170,7 +169,7 @@
     \pdfbookmark[1]{扉页}{page:title}
     % 扉页
     \label{page:title}
-
+    \makeatletter
     \let\footnotesize\small
     \let\footnoterule\relax
     \let \footnote \thanks
@@ -199,8 +198,8 @@
     \global\let\author\relax
     \global\let\date\relax
     \global\let\and\relax
-
-    %\maketitle
+    
+    \makeatother
     \thispagestyle{empty}
     \vfill
     \begin{center}
@@ -211,6 +210,5 @@
     \end{titlepage}
     \newpage
 }
-\makeatother
 
 \endinput

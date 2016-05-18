@@ -123,7 +123,7 @@
 
 \RequirePackage{geometry}
 
-\newcommand{\makecontent}{
+\newcommand{\makecontent}{\begin{titlepage}%
 	\label{page:contents}
 	\pdfbookmark[1]{目录}{page:contents}
 	\pagenumbering{roman}
@@ -131,11 +131,11 @@
 	\newpage
 	\pagenumbering{arabic}
 	\setcounter{page}{1}
+\end{titlepage}
 }
-\newcommand{\makecover}{%
+\newcommand{\makecover}{\begin{titlepage}%
     \pdfbookmark[0]{Dingo \@title}{}
     \pdfbookmark[1]{封面}{page:cover}
-    \begin{titlepage}
         \label{page:cover}
         \newgeometry{left=0em,right=0em,top=0em,bottom=0em}
             \vbox{\hfill\colorbox{\the\titlebgcolor}{\hbox to0.815\paperwidth{\Huge \color{\the\titlebgcolor}Dingo,Copyright (C) 2016 DingoLab}}}

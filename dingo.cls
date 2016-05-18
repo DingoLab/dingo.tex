@@ -117,6 +117,8 @@
 %%% 图片环绕
 \RequirePackage{wrapfig}
 
+\RequirePackage{graphicx}
+
 %%% Caption
 \RequirePackage{caption}
 

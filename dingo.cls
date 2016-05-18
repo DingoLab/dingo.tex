@@ -104,22 +104,48 @@
 {
     \setcounter{lstnumber}{1}
 }
-%  shell
 \lstnewenvironment{shell}[1][]
 { \lstset
-	{ firstnumber=last
-		, language=bash
-		, breaklines
-		, flexiblecolumns
-		, numbers=left
-		, frame=trBL
-		, #1
-	}
+    { firstnumber=last
+    , language=bash
+    , breaklines
+    , flexiblecolumns
+    , numbers=left
+    , frame=trBL
+    , #1
+    }
 }
 {
-	\setcounter{lstnumber}{1}
+    \setcounter{lstnumber}{1}
 }
-
+\lstnewenvironment{json}[1][]
+{ \lstset
+    { firstnumber=last
+%    , language=SQL
+    , breaklines
+    , flexiblecolumns
+    , numbers=left
+    , frame=trBL
+    , #1
+    }
+}
+{
+    \setcounter{lstnumber}{1}
+}
+\lstnewenvironment{yaml}[1][]
+{ \lstset
+    { firstnumber=last
+%    , language=SQL
+    , breaklines
+    , flexiblecolumns
+    , numbers=left
+    , frame=trBL
+    , #1
+    }
+}
+{
+    \setcounter{lstnumber}{1}
+}
 
 %%% for LiterateHaskell
 \long\def\ignore#1{\relax}
@@ -133,14 +159,15 @@
 %%% 图片环绕
 \RequirePackage{wrapfig}
 
+\RequirePackage{graphicx}
+
 %%% Caption
 \RequirePackage{caption}
 
 
 \RequirePackage{geometry}
 
-\newcommand{\makecontent}
-{
+\newcommand{\makecontent}{\begin{titlepage}%
 	\label{page:contents}
 	\pdfbookmark[1]{目录}{page:contents}
 	\pagenumbering{roman}
@@ -148,12 +175,11 @@
 	\newpage
 	\pagenumbering{arabic}
 	\setcounter{page}{1}
+\end{titlepage}
 }
-\makeatletter
-\newcommand{\makecover}{%
+\newcommand{\makecover}{\begin{titlepage}%
     \pdfbookmark[0]{Dingo \@title}{}
     \pdfbookmark[1]{封面}{page:cover}
-    \begin{titlepage}
         \label{page:cover}
         \newgeometry{left=0em,right=0em,top=0em,bottom=0em}
             \vbox{\hfill\colorbox{\the\titlebgcolor}{\hbox to0.815\paperwidth{\Huge \color{\the\titlebgcolor}Dingo,Copyright (C) 2016 DingoLab}}}
@@ -186,7 +212,7 @@
     \pdfbookmark[1]{扉页}{page:title}
     % 扉页
     \label{page:title}
-
+    \makeatletter
     \let\footnotesize\small
     \let\footnoterule\relax
     \let \footnote \thanks
@@ -216,7 +242,7 @@
     \global\let\date\relax
     \global\let\and\relax
 
-    %\maketitle
+    \makeatother
     \thispagestyle{empty}
     \vfill
     \begin{center}
@@ -227,6 +253,5 @@
     \end{titlepage}
     \newpage
 }
-\makeatother
 
 \endinput

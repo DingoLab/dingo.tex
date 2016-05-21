@@ -1,6 +1,6 @@
 \ProvidesClass{dingo}[2016/05/03, Qinka<qinka@live.com>, Ver.0.1.0]
 \NeedsTeXFormat{LaTeX2e}
-\LoadClass[oneside,UTF8,fontset=fandol]{ctexart}
+\LoadClass[oneside,UTF8,fontset=none]{ctexart}
 
 %%% Toks
 \newtoks\titlebgcolor %封面颜色

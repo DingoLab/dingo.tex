@@ -11,7 +11,6 @@ before_install:
   - sudo tlmgr update --all
   - sudo tlmgr install ctex l3kernel xecjk l3packages latex
   - sudo tlmgr install geometry fontspec fandol ulem zhnumber
-  - sudo tlmgr install
   - cd $TRAVIS_BUILD_DIR
 
 script: # 重要的东西编译三遍

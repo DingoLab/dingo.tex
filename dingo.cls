@@ -20,13 +20,13 @@
   }
 , subsection =
   { beforeskip = 1em
-  , afterskiip = 1em
+  , afterskip  = 1em
   , number = \thesubsection
   , format = \songti\zihao{4}
   }
 , subsubsection =
   { beforeskip = 1em
-  , afterskiip = 1em
+  , afterskip  = 1em
   , number = \thesubsubsection
   , format = \songti\zihao{-4}
   }

@@ -11,7 +11,8 @@ before_install:
   - sudo tlmgr update --all
   - sudo tlmgr install ctex
   - sudo tlmgr install geometry
-  - sudo tlmgr install expl3
+  - sudo tlmgr install l3kernel
+  - sudo tlmgr install l3packages
   - cd $TRAVIS_BUILD_DIR
 
 script: # 重要的东西编译三遍

@@ -12,7 +12,8 @@
 
 %%% CTeX
 \ctexset
-{ section =
+{ fontset = ubuntu
+, section =
   { beforeskip = 1em
   , afterskip  = 1em
   , number = \thesection

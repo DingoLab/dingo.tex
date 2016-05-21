@@ -8,7 +8,7 @@ before_install:
   - "sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra lmodern texlive-latex-recommended"
   - cd ~ && mkdir texmf
   - tlmgr init-usertree
-  - tlmgr update
+  - tlmgr update --all
   - tlmgr install ctex
   - tlmgr install geometry
   - tlmgr install expl3

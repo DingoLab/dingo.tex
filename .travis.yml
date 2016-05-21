@@ -16,7 +16,7 @@ before_install:
   - sudo tlmgr install l3packages
   - sudo tlmgr install latex
   - sudo tlmgr install fontspec
-  - sudo tlmgr install fandol
+  - sudo tlmgr install fandol ulem
   - cd $TRAVIS_BUILD_DIR
 
 script: # 重要的东西编译三遍

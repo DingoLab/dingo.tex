@@ -13,6 +13,7 @@ before_install:
   - sudo tlmgr install geometry
   - sudo tlmgr install l3kernel
   - sudo tlmgr install l3packages
+  - sudo tlmgr install article
   - cd $TRAVIS_BUILD_DIR
 
 script: # 重要的东西编译三遍

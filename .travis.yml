@@ -11,6 +11,7 @@ before_install:
   - tlmgr update
   - tlmgr install ctex
   - tlmgr install geometry
+  - tlmgr install expl3
   - cd $TRAVIS_BUILD_DIR
 
 script: # 重要的东西编译三遍

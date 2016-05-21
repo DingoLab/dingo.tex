@@ -1,6 +1,6 @@
 \ProvidesClass{dingo}[2016/05/03, Qinka<qinka@live.com>, Ver.0.1.0]
-
-\LoadClass[oneside,UTF8]{article}
+\NeedsTeXFormat{LaTeX2e}
+\LoadClass[oneside,UTF8,fontset=adobe]{ctexart}
 
 %%% Toks
 \newtoks\titlebgcolor %封面颜色
@@ -10,10 +10,27 @@
 \newtoks\city %地点
 
 
-%%% xeCKJ
-\RequirePackage{xeCJK}
-\setCJKmainfont{WenQuanYi Zen Hei}
-
+%%% CTeX
+\ctexset
+{ section =
+  { beforeskip = 1em
+  , afterskip  = 1em
+  , number = \thesection
+  , format = \songti\zihao{3}
+  }
+, subsection =
+  { beforeskip = 1em
+  , afterskiip = 1em
+  , number = \thesubsection
+  , format = \songti\zihao{4}
+  }
+, subsubsection =
+  { beforeskip = 1em
+  , afterskiip = 1em
+  , number = \thesubsubsection
+  , format = \songti\zihao{-4}
+  }
+}
 %%% color
 \RequirePackage{color}
 \RequirePackage{xcolor}

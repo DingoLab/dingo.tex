@@ -9,14 +9,9 @@ before_install:
   - cd ~ && mkdir texmf
   - tlmgr init-usertree
   - sudo tlmgr update --all
-  - sudo tlmgr install ctex
-  - sudo tlmgr install geometry
-  - sudo tlmgr install l3kernel
-  - sudo tlmgr install xecjk
-  - sudo tlmgr install l3packages
-  - sudo tlmgr install latex
-  - sudo tlmgr install fontspec
-  - sudo tlmgr install fandol ulem
+  - sudo tlmgr install ctex l3kernel xecjk l3packages latex
+  - sudo tlmgr install geometry fontspec fandol ulem zhnumber
+  - sudo tlmgr install
   - cd $TRAVIS_BUILD_DIR
 
 script: # 重要的东西编译三遍

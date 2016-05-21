@@ -11,6 +11,7 @@ before_install:
   - tlmgr update
   - tlmgr install ctex
   - tlmgr install geometry
+  - cd $TRAVIS_BUILD
 
 script: # 重要的东西编译三遍
   - xelatex test.tex

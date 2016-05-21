@@ -1,5 +1,6 @@
 # To build what is need
-
+sudo: required
+dist: trusty
 before_install:
   # 安装 XeTeX
   - "sudo apt-get update"

@@ -12,6 +12,7 @@ before_install:
   - sudo tlmgr install ctex
   - sudo tlmgr install geometry
   - sudo tlmgr install l3kernel
+  - sudo tlmgr install xecjk
   - sudo tlmgr install l3packages
   - sudo tlmgr install latex
   - sudo tlmgr install fontspec

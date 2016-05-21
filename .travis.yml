@@ -7,13 +7,10 @@ before_install:
   - "sudo apt-get install -y --no-install-recommends wget texlive-base texlive-xetex latex-xcolor xzdec"
   - "sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra lmodern texlive-latex-recommended"
   - cd ~ && mkdir texmf
-  - tlmgr init-usertree
-  - tlmgr --repository=ftp://tug.org/texlive/tlcritical update --list
-  - tlmgr update --self
-  - tlmgr update --all
-  - tlmgr install ctex
-  - tlmgr install geometry
-  - tlmgr install expl3
+  - sudo tlmgr update --all
+  - sudo tlmgr install ctex
+  - sudo tlmgr install geometry
+  - sudo tlmgr install expl3
   - cd $TRAVIS_BUILD_DIR
 
 script: # 重要的东西编译三遍

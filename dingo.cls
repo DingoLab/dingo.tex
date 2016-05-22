@@ -1,6 +1,6 @@
 \ProvidesClass{dingo}[2016/05/03, Qinka<qinka@live.com>, Ver.0.1.0]
 \NeedsTeXFormat{LaTeX2e}
-\LoadClass[oneside,UTF8,fontset=fandol]{ctexart}
+\LoadClass[oneside,UTF8]{ctexart}
 
 %%% Toks
 \newtoks\titlebgcolor %封面颜色
@@ -138,7 +138,6 @@
 \lstnewenvironment{json}[1][]
 { \lstset
     { firstnumber=last
-%    , language=SQL
     , breaklines
     , flexiblecolumns
     , numbers=left
@@ -152,12 +151,24 @@
 \lstnewenvironment{yaml}[1][]
 { \lstset
     { firstnumber=last
-%    , language=SQL
     , breaklines
     , flexiblecolumns
     , numbers=left
     , frame=trBL
     , #1
+    }
+}
+{
+    \setcounter{lstnumber}{1}
+}
+\lstnewenvironment{cmd}[1][]
+{ \lstset
+    { firstnumber=last
+        , breaklines
+        , flexiblecolumns
+        , numbers=left
+        , frame=trBL
+        , #1
     }
 }
 {

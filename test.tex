@@ -1,15 +1,20 @@
 % test
 \documentclass{dingo}
 
-\title{API Document}
+\title{Document-Class Test}
 \titlebgcolor{red}
 \titlefontcolor{black}
 \coverpic{Dingo-B}
+\author{李约瀚\\ qinka@live.com}
 \city{西安}
 
 \begin{document}
     \makecover
     \makecontent
+    \section{section测试}
+    \subsection{subsection测试}
+    \subsubsection{subsubsection测试}
+    \section{代码环境测试}
     这是Haskell 文学编程内容的测试。
     \\
     code 环境的测试
@@ -36,7 +41,23 @@ CREATE TABLE branch
 	)
 ;
     \end{sql}
-    
+    Bash 类 Shell 测试
+    \begin{shell}
+ # uname -a
+    \end{shell}
+    Windows CMD 测试
+    \begin{cmd}
+ C:\> help
+    \end{cmd}
+    JSON 测试
+    \begin{json}
+ {"foo":"bar"}
+    \end{json}
+    YAML 测试
+    \begin{yaml}
+ foo:
+   - bar  
+    \end{yaml}
     测试附录
     \begin{appendix}
     	\section{foo}

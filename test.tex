@@ -23,7 +23,7 @@
 
 module Main where
 	main :: IO ()
-	main = do\rightarrow
+	main = do
 		putStrLn "This is Haskell version of Hello,World."
 		putStrLn "Hello, World!"
     \end{code}
@@ -32,6 +32,10 @@ module Main where
 module Foo where
 	data Bar = Bar
     \end{spec}
+    \begin{code}
+  main' :: IO Int
+  main' = return 1
+    \end{code}
     测试 sql 环境
     \begin{sql}
 CREATE TABLE branch
@@ -43,7 +47,7 @@ CREATE TABLE branch
     \end{sql}
     Bash 类 Shell 测试
     \begin{shell}
- # uname -a
+ $ uname -a
     \end{shell}
     Windows CMD 测试
     \begin{cmd}

@@ -3,9 +3,9 @@ sudo: required
 dist: trusty
 before_install:
   # 安装 XeTeX
-  - "sudo apt-get update"
-  - "sudo apt-get install -y --no-install-recommends wget texlive-base texlive-xetex latex-xcolor xzdec"
-  - "sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra lmodern texlive-latex-recommended"
+  - sudo apt-get update
+  - sudo apt-get install -y --no-install-recommends wget texlive-base texlive-xetex latex-xcolor xzdec
+  - sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra lmodern texlive-latex-recommended
   - cd ~ && mkdir texmf
   - tlmgr init-usertree
   - sudo tlmgr update --all

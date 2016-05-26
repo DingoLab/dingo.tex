@@ -138,7 +138,19 @@
 \lstnewenvironment{json}[1][]
 { \lstset
     { firstnumber=last
-%    , language=SQL
+    , breaklines
+    , flexiblecolumns
+    , numbers=left
+    , frame=trBL
+    , #1
+    }
+}
+{
+    \setcounter{lstnumber}{1}
+}
+\lstnewenvironment{cmd}[1][]
+{ \lstset
+    { firstnumber=last
     , breaklines
     , flexiblecolumns
     , numbers=left

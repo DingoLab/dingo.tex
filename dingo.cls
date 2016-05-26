@@ -189,16 +189,16 @@
 %%% for LiterateHaskell
 \long\def\ignore#1{\relax}
 %%% for load haskell source
-\makeatletter
-\def\loadsrc{\futurelet\next\@loadsrcAux}
-\def\@loadsrcAux{\ifx\next[%
-  \expandafter\@loadsrcA
+
+\def\loadsrc{\futurelet\next\loadsrcAux}
+\def\loadsrcAux{\ifx\next[%]
+  \expandafter\loadsrcA
 \else
-  \expandafter\@loadsrcOA
+  \expandafter\loadsrcOA
 \fi}
-\def\@loadsrcA#1#2#3{\subsubsection{#2}\setcounter{codeline}{1}#3\input{#1#2}}
-\def\@loadsraOA[#1]#2#3#4{\subsubsection{#3}\label{module:#1}\setcounter{codeline}{1}#4\input{#2#3}}
-\makeatother
+\def\loadsrcA#1#2#3{\subsubsection{#2}\setcounter{codeline}{1}#3\input{#1#2}}
+\def\loadsrcOA[#1]#2#3#4{\subsubsection{#3}\label{#1}\setcounter{codeline}{1}#4\input{#2#3}}
+
 
 %%% 附录设置
 \RequirePackage[titletoc]{appendix}

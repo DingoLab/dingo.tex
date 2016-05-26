@@ -1,6 +1,6 @@
 \ProvidesClass{dingo}[2016/05/03, Qinka<qinka@live.com>, Ver.0.1.0]
 \NeedsTeXFormat{LaTeX2e}
-\LoadClass[oneside,UTF8,fontset=fandol]{ctexart}
+\LoadClass[oneside,UTF8]{ctexart}
 
 %%% Toks
 \newtoks\titlebgcolor %封面颜色
@@ -47,6 +47,7 @@
 
 %%% 代码列表
 \RequirePackage{listings}
+\lstset{tabsize=2}
 \newcounter{codeline}
 \setcounter{codeline}{1}
 \setcounter{lstnumber}{1}
@@ -65,7 +66,8 @@
 \def\codestycm{\rmfamily\itshape\color{codecm}}
 \def\codestyns{\tiny\color{codens}}
 \lstnewenvironment{code}[1][]
-{ \lstset
+{ \setcounter{lstnumber}{\value{codeline}}
+  \lstset
   { firstnumber=last
   , language=Haskell
   , breaklines
@@ -75,8 +77,7 @@
   , commentstyle=\codestycm
   , flexiblecolumns
   , numbers=left
-  , numberstyle=\codestyns
-  , frame=trBL
+  , frame=trbL
   , #1
   }
 }
@@ -89,7 +90,7 @@
 \def\specstyns{\tiny\color{specns}}
 \lstnewenvironment{spec}[1][]
 { \lstset
-  { firstnumber=last
+  { firstnumber=1
   , language=Haskell
   , breaklines
   , backgroundcolor=\color{specbg}
@@ -98,37 +99,20 @@
   , commentstyle=\specstycm
   , flexiblecolumns
   , numbers=left
-  , numberstyle=\specstyns
-  , frame=trBL
+  , frame=trbL
   , #1
   }
 }
 {
-  \setcounter{codeline}{1}
 }
 %  SQL
 \lstnewenvironment{sql}[1][]
 { \lstset
-    { firstnumber=last
-    , language=SQL
+    { language=SQL
     , breaklines
     , flexiblecolumns
     , numbers=left
-    , frame=trBL
-    , #1
-    }
-}
-{
-    \setcounter{lstnumber}{1}
-}
-\lstnewenvironment{shell}[1][]
-{ \lstset
-    { firstnumber=last
-    , language=bash
-    , breaklines
-    , flexiblecolumns
-    , numbers=left
-    , frame=trBL
+    , frame=trbL
     , #1
     }
 }
@@ -137,24 +121,10 @@
 }
 \lstnewenvironment{json}[1][]
 { \lstset
-    { firstnumber=last
-    , breaklines
+    { breaklines
     , flexiblecolumns
     , numbers=left
-    , frame=trBL
-    , #1
-    }
-}
-{
-    \setcounter{lstnumber}{1}
-}
-\lstnewenvironment{cmd}[1][]
-{ \lstset
-    { firstnumber=last
-    , breaklines
-    , flexiblecolumns
-    , numbers=left
-    , frame=trBL
+    , frame=trbL
     , #1
     }
 }
@@ -163,13 +133,53 @@
 }
 \lstnewenvironment{yaml}[1][]
 { \lstset
-    { firstnumber=last
-%    , language=SQL
-    , breaklines
+    { breaklines
     , flexiblecolumns
     , numbers=left
-    , frame=trBL
+    , frame=trbL
     , #1
+    }
+}
+{
+    \setcounter{lstnumber}{1}
+}
+
+\lstnewenvironment{bash}[1][]
+{ \lstset
+    { language=bash
+        , breaklines
+        , flexiblecolumns
+        , numbers=left
+        , frame=trbL
+        , #1
+    }
+}
+{
+    \setcounter{lstnumber}{1}
+}
+\lstnewenvironment{shell}[1][]
+{ \lstset
+    { backgroundcolor=\color{black}
+        , basicstyle=\color{white}\bfseries
+        , breaklines
+        , flexiblecolumns
+        , numbers=left
+        , frame=TBrl
+        , #1
+    }
+}
+{
+    \setcounter{lstnumber}{1}
+}
+\lstnewenvironment{cmd}[1][]
+{ \lstset
+    { backgroundcolor=\color{black}
+        , basicstyle=\color{white}\bfseries
+        , breaklines
+        , flexiblecolumns
+        , numbers=left
+        , frame=TBrl
+        , #1
     }
 }
 {
@@ -178,6 +188,17 @@
 
 %%% for LiterateHaskell
 \long\def\ignore#1{\relax}
+%%% for load haskell source
+\makeatletter
+\def\loadsrc{\futurelet\next\@loadsrcAux}
+\def\@loadsrcAux{\ifx\next[%
+  \expandafter\@loadsrcA
+\else
+  \expandafter\@loadsrcOA
+\fi}
+\def\@loadsrcA#1#2#3{\subsubsection{#2}\setcounter{codeline}{1}#3\input{#1#2}}
+\def\@loadsraOA[#1]#2#3#4{\subsubsection{#3}\label{module:#1}\setcounter{codeline}{1}#4\input{#2#3}}
+\makeatother
 
 %%% 附录设置
 \RequirePackage[titletoc]{appendix}
